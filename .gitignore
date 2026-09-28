@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+.venv/
+venv/
+data/
+output/
+*.egg-info/
+.DS_Store
+Thumbs.db
