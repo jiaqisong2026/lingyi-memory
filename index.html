@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>灵忆 LingYi · 面向银河麒麟的 OS Agent 自学习记忆优化系统</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Source Han Sans SC", sans-serif;
+    background: #0b1220; color: #e6edf6; line-height: 1.7;
+  }
+  .hero {
+    padding: 90px 24px 70px; text-align: center;
+    background: radial-gradient(ellipse at 50% -20%, rgba(56,120,255,.25), transparent 60%);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .tag { display: inline-block; font-size: 13px; letter-spacing: 2px; color: #6ea8ff; border: 1px solid rgba(110,168,255,.4); border-radius: 999px; padding: 4px 16px; margin-bottom: 24px; }
+  h1 { font-size: 46px; font-weight: 700; letter-spacing: 1px; }
+  h1 span { color: #6ea8ff; }
+  .subtitle { margin-top: 16px; font-size: 18px; color: #9fb2cc; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 60px 24px; }
+  h2 { font-size: 26px; margin-bottom: 24px; padding-left: 14px; border-left: 4px solid #3878ff; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 22px; }
+  .card h3 { font-size: 16px; color: #6ea8ff; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: #b8c4d8; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 18px; }
+  .stat { text-align: center; background: rgba(56,120,255,.08); border: 1px solid rgba(56,120,255,.25); border-radius: 12px; padding: 26px 12px; }
+  .stat .num { font-size: 32px; font-weight: 700; color: #7db0ff; }
+  .stat .lbl { font-size: 13px; color: #9fb2cc; margin-top: 6px; }
+  pre { background: #0f1a2e; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 18px; overflow-x: auto; font-size: 14px; color: #a8d4ff; }
+  a { color: #6ea8ff; }
+  .links { margin-top: 10px; }
+  footer { text-align: center; padding: 30px; font-size: 13px; color: #5f7191; border-top: 1px solid rgba(255,255,255,.06); }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="tag">OS AGENT · MEMORY OPTIMIZATION · 银河麒麟</div>
+    <h1>灵忆 <span>LingYi</span></h1>
+    <p class="subtitle">面向银河麒麟操作系统的 OS Agent 自学习记忆优化系统 —— 让智能体像人一样记住你的习惯，越用越懂你。</p>
+  </div>
+
+  <div class="wrap">
+    <h2>项目简介</h2>
+    <p style="color:#b8c4d8;">灵忆 LingYi 是一套运行在银河麒麟（Kylin V10 SP3）上的 OS Agent 记忆优化中间件。它在不改动大模型本身的前提下，为智能体增加了可自学习、可压缩、可召回的长期记忆层：自动提取用户偏好与操作习惯，跨会话沉淀上下文，并在每轮交互前高效召回，显著降低 Token 消耗、提升响应速度与回答贴合度。</p>
+  </div>
+
+  <div class="wrap" style="padding-top:0;">
+    <h2>核心能力</h2>
+    <div class="grid">
+      <div class="card"><h3>自学习记忆</h3><p>从对话与操作流中自动提取偏好、习惯与冲突知识，跨会话持续沉淀。</p></div>
+      <div class="card"><h3>高效召回</h3><p>记忆库压缩约 12 倍，召回延迟 P50 仅 0.15ms，远低于 500ms 实时交互阈值。</p></div>
+      <div class="card"><h3>Token 节省</h3><p>按需注入相关记忆，长上下文 Token 消耗降低约 92%。</p></div>
+      <div class="card"><h3>信创原生</h3><p>面向银河麒麟 OS 深度适配，支持国产软硬件环境下的本地部署。</p></div>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-top:0;">
+    <h2>关键指标</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">58.3%</div><div class="lbl">LongMemEval 关键词命中率</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">答案相关率</div></div>
+      <div class="stat"><div class="num">0.15ms</div><div class="lbl">召回延迟 P50</div></div>
+      <div class="stat"><div class="num">-92%</div><div class="lbl">长上下文 Token 降低</div></div>
+      <div class="stat"><div class="num">12×</div><div class="lbl">记忆库压缩比</div></div>
+      <div class="stat"><div class="num">163</div><div class="lbl">pytest 通过用例</div></div>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-top:0;">
+    <h2>快速开始</h2>
+    <pre>git clone https://gitee.com/songjiaqi2026/lingyi-memory.git
+cd lingyi-memory
+pip install -e .
+pytest -q</pre>
+    <p class="links">源码与文档：<a href="https://gitee.com/songjiaqi2026/lingyi-memory">https://gitee.com/songjiaqi2026/lingyi-memory</a></p>
+  </div>
+
+  <footer>灵忆 LingYi · 面向银河麒麟的 OS Agent 自学习记忆优化系统 · MIT License</footer>
+</body>
+</html>
